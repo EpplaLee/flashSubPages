@@ -19,27 +19,59 @@
         </div>
     </nav>
     <div class="pure-g">
-        <div class="pure-u-1-2 " id="tv">
-            <img class="pureimg" src="./imgs/gotham.jpg" alt="">
+        <div class="pure-u-1-2 carousel" id="tv">
+            <img class="pureimg" v-bind:src="tvOnShow.src" alt="tvOnShow.name">
+            <button class="pure-button  carousel-button carousel-button-left"><a href="{{ tvOnShow.href}}">查看详情</a></button>
+            <p class="post-info post-info-left">{{ tvOnShow.info }}</p>
             <div class="circle" id="red-circle">
                 <a href="#">美剧</a>
             </div>
         </div>
-        <div class="pure-u-1-2" id="movie">
-            <img class="pureimg" src="./imgs/theflash.jpg" alt="">
+        <div class="pure-u-1-2 carousel" id="movie">
+            <img class="pureimg" v-bind:src="movieOnShow.src" alt="movieOnShow.name">
+            <button class="pure-button  carousel-button carousel-button-right"><a href="{{ movieOnShow.href}}">查看详情</a></button>
+            <p class="post-info post-info-right">{{ movieOnShow.info }}</p>
             <div class="circle" id="blue-circle">
                 <a href="#">电影</a>
             </div>
         </div>
         <div class="pure-u-1-2" id="news">
+            <div id="news-area">
+                    <ul>
+                        <li class="news-title">提姆·德雷克在DC漫画中退场</li>
+                        <hr class="hr0" />
+                        <li class="news-title">《哥谭》第二季末为何惊现小丑</li>
+                        <hr class="hr0" />
+                        <li class="news-title">《绿箭侠》承诺第五季中没有魔法</li>
+                        <hr class="hr0" />
+                        <li class="news-title">《闪电侠》第三季解密：新极速反派将加入</li>
+                        <hr class="hr0" />       
+                        <li class="news-title">詹姆斯·古恩曝光《银河护卫队2》的设计理念</li>
+                    </ul>
+                </div>
             <div class="circle" id="yellow-circle">
-                <a href="#">资讯</a>
+                <a href="#">资讯</a>               
             </div>
         </div>
         <div class="pure-u-1-2" id="trailer">
+            <div id="news-area">
+                    <ul>
+                        <li class="news-title">《复仇者联盟3》预告片发布 定档XXXX-XX-XX</li>
+                        <hr class="hr0" />
+                        <li class="news-title">《神奇女侠》预告片发布 定档XXXX-XX-XX</li>
+                        <hr class="hr0" />
+                        <li class="news-title">《正义联盟》预告片发布 定档XXXX-XX-XX</li>
+                        <hr class="hr0" />
+                        <li class="news-title">《雷神3诸神黄昏》预告片发布 定档XXXX-XX-XX</li>
+                        <hr class="hr0" />       
+                        <li class="news-title">《加勒比海盗5》预告片发布 定档XXXX-XX-XX</li>
+                    </ul>
+                </div>
             <div class="circle" id="green-circle">
                 <a href="#">预告</a>
             </div>
         </div>
     </div>
 </body>
+<script src="./dist/vue.min.js"></script>
+<script src="./public/index.js"></script>

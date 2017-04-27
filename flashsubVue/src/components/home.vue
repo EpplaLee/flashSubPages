@@ -1,42 +1,58 @@
-#nav {
-    display: flex;
-    justify-content: space-between;
-    height: 5vh;
-    background-color:  #01062E;
-}
-#nav > img {
-    height: 5vh;
-}
-.pure-menu-item > .pure-menu-link{
-    color: white !important;
-}
-.pure-menu-link:before{
-            content: "";
-            position: absolute;
-            z-index: 2;
-            left: 0;
-            bottom: 5px;
-            height: 2px;
-            width: 100%;
-            background: white;
-            transform: scale(0);
-            transition: all 0.3s;
-}
-.pure-menu-link:hover:before{
-            transform: scale(1);
-}
+<template>
+<div>
+    <navigation></navigation>
+    <div class="pure-g">
+        <div class="pure-u-1-2 carousel" id="tv">
+            <img class="pureimg" >
+            <button class="pure-button  carousel-button carousel-button-left"><a href="">查看详情</a></button>
+            <p class="post-info post-info-left"></p>
+            <div class="circle" id="red-circle">
+                <a href="#">美剧</a>
+            </div>
+        </div>
+        <div class="pure-u-1-2 carousel" id="movie">
+            <img class="pureimg"  >
+            <button class="pure-button  carousel-button carousel-button-right"><a href="">查看详情</a></button>
+            <p class="post-info post-info-right"></p>
+            <div class="circle" id="blue-circle">
+                <a href="#">电影</a>
+            </div>
+        </div>
+        <div class="pure-u-1-2" id="news">
+            <div id="news-area">
+                <news></news>
+            </div>
+            <div class="circle" id="yellow-circle">
+                <a href="#">资讯</a>               
+            </div>
+        </div>
+        <div class="pure-u-1-2" id="trailer">
+            <div id="news-area">
+                <trailer></trailer>
+            </div>
+            <div class="circle" id="green-circle">
+                <a href="#">预告</a>
+            </div>
+        </div>
+    </div>
+</div>
+</template>
 
-.pure-menu-link:hover {
-    color: #99ABB9 !important;
-    background-color:  #01062E !important;
+<script>
+import navigation from './common/navigation'
+import news from './common/news'
+import trailer from './common/trailer'
+export default {
+  components: {
+    'navigation': navigation,
+    'news': news,
+    'trailer': trailer
+  }
 }
-.pure-menu-item::active {
-    color: #99ABB9 !important;
-    background-color:  #01062E !important;
-}
+</script>
 
-/*---------------------------------body----------------*/
-
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style>
 .pure-g {
     height: 95vh !important;
 }
@@ -97,7 +113,7 @@
     bottom: -60px;
     right: -60px;
     border-radius: 50%;
-    background-color: black;
+    background-color: #01062E;
     border: solid 2px black;
 }
 #red-circle > a {
@@ -135,7 +151,7 @@
     top: -60px;
     left: -60px;
     border-radius: 50%;
-    background-color: black;
+    background-color: #01062E;
     border: solid 2px black;
 }
 #green-circle > a {
@@ -154,8 +170,14 @@
     list-style: none;
     color: dimgray;
 }
+.news-title > a{
+    color: black;
+    text-decoration: none;
+}
 .hr0{ 
     height:1px;
     border:none;
     border-top:1.5px dashed gray;
 }  
+
+</style>

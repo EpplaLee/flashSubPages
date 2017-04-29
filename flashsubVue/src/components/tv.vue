@@ -3,10 +3,14 @@
         <navigation></navigation>
         <template>
             <div id="tv-area">
+                
                 <div class="tv-item pure-u-1-4" v-for="(tv,index) in tvList">
+                    <router-link v-bind:to="'tv/'+tv.id">
                     <img :src="tv.url" v-bind:alt="tv.name">
-                    <router-link v-bind:to="'tv/'+tv.id">{{ tv.name }}</router-link>    
+                    <p>{{ tv.name }}</p> 
+                    </router-link>   
                 </div>
+                
             </div>
         </template>    
     </div>
@@ -46,11 +50,11 @@ export default {
     height: 400px;
     width: 280px;
 }
-.tv-item > img {
+a > img {
     height: 380px;
     width: 280px;
 }
-.tv-item > a {
+a > p {
     display: block;
     text-decoration: none;
     margin-top: -5px;

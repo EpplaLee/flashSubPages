@@ -2,7 +2,7 @@
     <div class="pure-menu pure-menu-horizontal" id="navigation">
             <router-link to="/"><img src="../../assets/logo.jpg" alt="logo"></router-link>
             <div>
-            <form class="pure-form">
+            <form class="pure-form" id="search">
                 <input type="text" class="pure-input-rounded" id="search-input">
                 <button type="submit" class="pure-button" id="search-button"><i class="fa fa-search" aria-hidden="true"></i></button>
             </form>
@@ -25,11 +25,17 @@
 #navigation {
     display: flex;
     justify-content: space-between;
-    height: 45px;
+    height: 48px;
     background-color:  #01062E;
 }
 a > img {
-    height: 5vh;
+    height: 48px;
+}
+#search {
+    opacity: 0.9;
+}
+#search:hover {
+    opacity: 1;
 }
 #search-button {
     width: 40px;
@@ -67,10 +73,10 @@ a > img {
 
 .pure-menu-link:hover {
     color: #99ABB9 !important;
-    background-color:  #01062E !important;
+    background-color:  #2F3847 !important;
 }
 .pure-menu-item::active {
     color: #99ABB9 !important;
-    background-color:  #01062E !important;
+    background-color:  #2F3847 !important;
 }
 </style>

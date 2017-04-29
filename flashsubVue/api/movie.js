@@ -11,5 +11,8 @@ export default {
   },
   getMovie (id) {
     return instance.get(`/api/movie/` + id)
+  },
+  getMovieOnShow () {
+    return instance.get('api/movie?carousel=true')
   }
 }

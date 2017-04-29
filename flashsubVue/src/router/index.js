@@ -2,6 +2,8 @@ import home from '@/components/home'
 import tv from '@/components/tv'
 import movie from '@/components/movie'
 import news from '@/components/news'
+import tvPage from '@/components/tvPage'
+import moviePage from '@/components/moviePage'
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -30,6 +32,16 @@ export default new Router({
       path: '/news',
       component: news,
       name: 'news'
+    },
+    {
+      path: '/tv/:id',
+      component: tvPage,
+      name: 'tvPage'
+    },
+    {
+      path: '/movie/:id',
+      component: moviePage,
+      name: 'moviePage'
     }
   ]
 })

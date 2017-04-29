@@ -11,5 +11,8 @@ export default {
   },
   getTV (id) {
     return instance.get(`/api/tv/` + id)
+  },
+  getTVOnShow () {
+    return instance.get('/api/tv?carousel=true')
   }
 }

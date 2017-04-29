@@ -2,28 +2,32 @@
 <div>
     <navigation></navigation>
     <div class="pure-g">
-        <div class="pure-u-1-2 carousel" id="tv">
-            <img class="pureimg" >
-            <button class="pure-button  carousel-button carousel-button-left"><a href="">查看详情</a></button>
-            <p class="post-info post-info-left"></p>
+        <div class="pure-u-1-2 carousel" id="tv" v-for="(tv,index) in tvOnShowList" v-show="index===tvPage">
+            <transition name="fade">
+            <img class="pureimg" v-bind:src="tv.onShowUrl" v-show="index===tvPage">
+            </transition>               
+            <button class="pure-button  carousel-button carousel-button-left"><a v-bind:href="'/tv/'+tv.id">查看详情</a></button>
+            <p class="post-info post-info-left">{{ tv.description }}</p>
             <div class="circle" id="red-circle">
-                <a href="#">美剧</a>
+            <a href="/tv">美剧</a>
             </div>
-        </div>
-        <div class="pure-u-1-2 carousel" id="movie">
-            <img class="pureimg"  >
-            <button class="pure-button  carousel-button carousel-button-right"><a href="">查看详情</a></button>
-            <p class="post-info post-info-right"></p>
+        </div> 
+        <div class="pure-u-1-2 carousel" id="movie" v-for="(movie,index) in movieOnShowList" v-show="index===moviePage">
+            <transition name="fade">
+            <img class="pureimg" v-bind:src="movie.onShowUrl" v-show="index===moviePage">
+            </transition>
+            <button class="pure-button  carousel-button carousel-button-right"><a v-bind:href="'/movie/'+movie.id">查看详情</a></button>
+            <p class="post-info post-info-right">{{ movie.description }}</p>
             <div class="circle" id="blue-circle">
-                <a href="#">电影</a>
+                <a href="/movie">电影</a>
             </div>
-        </div>
+        </div> 
         <div class="pure-u-1-2" id="news">
             <div id="news-area">
                 <news></news>
             </div>
             <div class="circle" id="yellow-circle">
-                <a href="#">资讯</a>               
+                <a href="/news">资讯</a>               
             </div>
         </div>
         <div class="pure-u-1-2" id="trailer">
@@ -42,16 +46,40 @@
 import navigation from './common/navigation'
 import news from './common/news'
 import trailer from './common/trailer'
+import tvApi from '../../api/tv'
+import movieApi from '../../api/movie'
 export default {
   components: {
     'navigation': navigation,
     'news': news,
     'trailer': trailer
+  },
+  data () {
+    return {
+      tvOnShowList: [],
+      movieOnShowList: [],
+      moviePage: 0,
+      tvPage: 0
+    }
+  },
+  created () {
+    movieApi.getMovieOnShow().then(res => {
+      this.movieOnShowList = res.data.movieList
+    })
+    tvApi.getTVOnShow().then(res => {
+      this.tvOnShowList = res.data.tvList
+    })
+  },
+  mounted () {
+    setInterval(() => {
+      if (this.moviePage === this.movieOnShowList.length - 1) this.moviePage = 0
+      else this.moviePage = this.moviePage + 1
+      if (this.tvPage === this.tvOnShowList.length - 1) this.tvPage = 0
+      else this.tvPage = this.tvPage + 1
+    }, 4000)
   }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
 .pure-g {
     height: 95vh !important;
@@ -60,6 +88,18 @@ export default {
     height: 47.5vh !important;
     position: relative;
     overflow: hidden;
+}
+#tv {
+    background-color: black;
+}
+#movie {
+    background-color: black;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .8s
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
 }
 .circle {
     z-index: 2;

@@ -6,7 +6,7 @@
             <transition name="fade">
             <img class="pureimg" v-bind:src="tv.onShowUrl" v-show="index===tvPage">
             </transition>               
-            <button class="pure-button  carousel-button carousel-button-left"><a v-bind:href="'/tv/'+tv.id">查看详情</a></button>
+            <button class="pure-button  carousel-button carousel-button-left"><a v-bind:href="'/tv/'+tv._id">查看详情</a></button>
             <p class="post-info post-info-left">{{ tv.description }}</p>
             <div class="circle" id="red-circle">
             <a href="/tv">美剧</a>
@@ -16,7 +16,7 @@
             <transition name="fade">
             <img class="pureimg" v-bind:src="movie.onShowUrl" v-show="index===moviePage">
             </transition>
-            <button class="pure-button  carousel-button carousel-button-right"><a v-bind:href="'/movie/'+movie.id">查看详情</a></button>
+            <button class="pure-button  carousel-button carousel-button-right"><a v-bind:href="'/movie/'+movie._id">查看详情</a></button>
             <p class="post-info post-info-right">{{ movie.description }}</p>
             <div class="circle" id="blue-circle">
                 <a href="/movie">电影</a>

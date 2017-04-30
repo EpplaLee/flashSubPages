@@ -4,14 +4,14 @@
     <div id="news-area">
         <div class="news-item" v-for="(news,index) in newsList">
             <div id="gallery">
-            <img v-bind:src="news.url" v-bind:alt="news.name">    
+            <img v-bind:src="news.pic" v-bind:alt="news.name">    
             </div>
             <div id="text-area">
                 <h3>{{ news.name }}</h3>
                 <hr class="hr0" />
                 <div id="info">
-                <p id="trans">翻译贡献者:{{ news.trans }}</p>
-                <p id="time">{{ news.time }}</p>
+                <p id="trans">翻译贡献者:{{ news.translator }}</p>
+                <p id="time">{{ news.transTime }}</p>
                 </div>
             </div>  
         </div>
@@ -35,7 +35,7 @@ export default {
   },
   mounted () {
     newsApi.getAllNews('', '', this.limit).then(res => {
-      this.allPage = res.data.allPage
+      console.log(res.data)
       this.newsList = res.data.newsList
       this.isloading = false
     })

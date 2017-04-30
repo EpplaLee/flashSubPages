@@ -75,8 +75,7 @@ a > img {
     color: #99ABB9 !important;
     background-color:  #2F3847 !important;
 }
-.pure-menu-item::active {
-    color: #99ABB9 !important;
+.pure-menu-link:visited {
     background-color:  #2F3847 !important;
 }
 </style>

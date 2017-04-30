@@ -32,7 +32,6 @@ export default {
   },
   mounted () {
     tvApi.getAllTV('', '', this.limit).then(res => {
-      this.allPage = res.data.allPage
       this.tvList = res.data.tvList
       this.isLoading = false
     })

@@ -2,7 +2,7 @@
     <div id="body">
         <navigation></navigation>
         <div id="content">
-            <img v-bind:src="movie.onShowUrl" alt="movie.name">
+            <img v-bind:src="movie.bigPic" alt="movie.name">
             <table class="pure-table">
                 <tbody>
                     <tr>
@@ -51,7 +51,7 @@
 </template>
 <script>
 import navigation from './common/navigation'
-import movieApi from '../../api/movie'
+import movieApi from '../api/movie'
 export default {
   components: {
     'navigation': navigation

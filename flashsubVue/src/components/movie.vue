@@ -4,8 +4,8 @@
         <template>
             <div id="movie-area">
                 <div class="movie-item pure-u-1-4" v-for="(movie,index) in movieList">
-                    <router-link v-bind:to="'movie/'+movie.id">
-                    <img :src="movie.url" v-bind:alt="movie.name">
+                    <router-link v-bind:to="'movie/'+movie._id">
+                    <img :src="movie.smallPic" v-bind:alt="movie.name">
                     <p>{{ movie.name }}</p>
                     </router-link>    
                 </div>
@@ -15,7 +15,7 @@
 </template>
 <script>
 import navigation from './common/navigation'
-import movieApi from '../../api/movie.js'
+import movieApi from '../api/movie.js'
 export default {
   components: {
     'navigation': navigation

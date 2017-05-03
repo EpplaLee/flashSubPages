@@ -4,7 +4,7 @@
     <div class="pure-g">
         <div class="pure-u-1-2 carousel" id="tv" v-for="(tv,index) in tvOnShowList" v-show="index===tvPage">
             <transition name="fade">
-            <img class="pureimg" v-bind:src="tv.onShowUrl" v-show="index===tvPage">
+            <img class="pureimg" v-bind:src="tv.bigPic" v-show="index===tvPage">
             </transition>               
             <button class="pure-button  carousel-button carousel-button-left"><a v-bind:href="'/tv/'+tv._id">查看详情</a></button>
             <p class="post-info post-info-left">{{ tv.description }}</p>
@@ -14,7 +14,7 @@
         </div> 
         <div class="pure-u-1-2 carousel" id="movie" v-for="(movie,index) in movieOnShowList" v-show="index===moviePage">
             <transition name="fade">
-            <img class="pureimg" v-bind:src="movie.onShowUrl" v-show="index===moviePage">
+            <img class="pureimg" v-bind:src="movie.bigPic" v-show="index===moviePage">
             </transition>
             <button class="pure-button  carousel-button carousel-button-right"><a v-bind:href="'/movie/'+movie._id">查看详情</a></button>
             <p class="post-info post-info-right">{{ movie.description }}</p>
@@ -46,8 +46,8 @@
 import navigation from './common/navigation'
 import news from './common/news'
 import trailer from './common/trailer'
-import tvApi from '../../api/tv'
-import movieApi from '../../api/movie'
+import tvApi from '../api/tv'
+import movieApi from '../api/movie'
 export default {
   components: {
     'navigation': navigation,

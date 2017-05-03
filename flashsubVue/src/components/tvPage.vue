@@ -2,7 +2,7 @@
     <div id="body">
         <navigation></navigation>
         <div id="content">
-            <img v-bind:src="tv.onShowUrl" alt="tv.name">
+            <img v-bind:src="tv.bigPic" alt="tv.name">
             <table class="pure-table">
                 <tbody>
                     <tr>
@@ -62,7 +62,7 @@
 </template>
 <script>
 import navigation from './common/navigation'
-import tvApi from '../../api/tv'
+import tvApi from '../api/tv'
 export default {
   components: {
     'navigation': navigation
@@ -74,6 +74,7 @@ export default {
   },
   mounted () {
     tvApi.getTV(this.$route.params.id).then(res => {
+      console.log(res.data)
       this.tv = res.data.tv
     })
   }

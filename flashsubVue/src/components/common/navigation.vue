@@ -32,6 +32,7 @@ a > img {
     height: 48px;
 }
 #search {
+    display: none;
     opacity: 0.9;
 }
 #search:hover {

@@ -5,8 +5,8 @@
             <div id="tv-area">
                 
                 <div class="tv-item pure-u-1-4" v-for="(tv,index) in tvList">
-                    <router-link v-bind:to="'tv/'+tv.id">
-                    <img :src="tv.url" v-bind:alt="tv.name">
+                    <router-link v-bind:to="'tv/'+tv._id">
+                    <img :src="tv.smallPic" v-bind:alt="tv.name">
                     <p>{{ tv.name }}</p> 
                     </router-link>   
                 </div>
@@ -17,7 +17,7 @@
 </template>
 <script>
 import navigation from './common/navigation'
-import tvApi from '../../api/tv.js'
+import tvApi from '../api/tv.js'
 export default {
   components: {
     'navigation': navigation

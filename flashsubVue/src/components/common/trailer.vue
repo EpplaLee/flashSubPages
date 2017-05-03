@@ -7,7 +7,7 @@
     </ul>
 </template>
 <script>
-import trailerApi from '../../../api/trailer.js'
+import trailerApi from '../../api/trailer.js'
 export default {
   data () {
     return {
@@ -19,7 +19,6 @@ export default {
   },
   mounted () {
     trailerApi.getAllTrailer('', '', this.limit).then(res => {
-      console.log(res)
       this.allPage = res.data.allPage
       this.trailerList = res.data.trailerList
       this.isLoading = false

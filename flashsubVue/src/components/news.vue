@@ -20,7 +20,7 @@
 </template>
 <script>
 import navigation from './common/navigation'
-import newsApi from '../../api/news.js'
+import newsApi from '../api/news.js'
 export default {
   components: {
     'navigation': navigation
@@ -35,7 +35,6 @@ export default {
   },
   mounted () {
     newsApi.getAllNews('', '', this.limit).then(res => {
-      console.log(res.data)
       this.newsList = res.data.newsList
       this.isloading = false
     })

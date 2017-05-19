@@ -10,8 +10,8 @@
                 <li class="pure-menu-item"><router-link to="/tv" class="pure-menu-link">美剧</router-link></li>
                 <li class="pure-menu-item"><router-link to="/movie" class="pure-menu-link">电影</router-link></li>
                 <li class="pure-menu-item"><router-link to="/news" class="pure-menu-link">资讯</router-link></li>
-                <li class="pure-menu-item"><router-link to="/about" class="pure-menu-link">关于闪电</router-link></li>
-                <li class="pure-menu-item"><router-link to="/joinus" class="pure-menu-link">加入我们</router-link></li>
+                <!--<li class="pure-menu-item"><router-link to="/about" class="pure-menu-link">关于闪电</router-link></li>
+                <li class="pure-menu-item"><router-link to="/joinus" class="pure-menu-link">加入我们</router-link></li>-->
             </ul>  
             </div>
     </div>

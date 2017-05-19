@@ -1,7 +1,7 @@
 import Axios from 'axios'
 
 var instance = Axios.create({
-  baseURL: 'http://localhost:3001',
+  baseURL: 'http://118.89.178.218:8080',
   timeout: 3000
 })
 

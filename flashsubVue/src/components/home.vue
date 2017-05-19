@@ -2,15 +2,17 @@
 <div>
     <navigation></navigation>
     <div class="pure-g">
-        <div class="pure-u-1-2 carousel" id="tv" v-for="(tv,index) in tvOnShowList" v-show="index===tvPage">
+        <div class="pure-u-1-2 carousel" id="tv" v-for="(tv,index) in tvOnShowList"  v-show="index===tvPage">
             <transition name="fade">
             <img class="pureimg" v-bind:src="tv.bigPic" v-show="index===tvPage">
             </transition>               
             <button class="pure-button  carousel-button carousel-button-left"><a v-bind:href="'/tv/'+tv._id">查看详情</a></button>
             <p class="post-info post-info-left">{{ tv.description }}</p>
+            <router-link to="/tv">
             <div class="circle" id="red-circle">
             <a href="/tv">美剧</a>
             </div>
+            </router-link>
         </div> 
         <div class="pure-u-1-2 carousel" id="movie" v-for="(movie,index) in movieOnShowList" v-show="index===moviePage">
             <transition name="fade">
@@ -18,17 +20,21 @@
             </transition>
             <button class="pure-button  carousel-button carousel-button-right"><a v-bind:href="'/movie/'+movie._id">查看详情</a></button>
             <p class="post-info post-info-right">{{ movie.description }}</p>
+            <router-link to="/movie">
             <div class="circle" id="blue-circle">
                 <a href="/movie">电影</a>
             </div>
+            </router-link>
         </div> 
         <div class="pure-u-1-2" id="news">
             <div id="news-area">
                 <news></news>
             </div>
+            <router-link to="/news">
             <div class="circle" id="yellow-circle">
                 <a href="/news">资讯</a>               
             </div>
+            </router-link>
         </div>
         <div class="pure-u-1-2" id="trailer">
             <div id="news-area">
@@ -85,7 +91,7 @@ export default {
     height: 95vh !important;
 }
 .pure-u-1-2 {
-    height: 47.5vh !important;
+    height: 47.5vh;
     position: relative;
     overflow: hidden;
 }
@@ -95,12 +101,7 @@ export default {
 #movie {
     background-color: black;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .8s
-}
-.fade-enter, .fade-leave-active {
-  opacity: 0
-}
+
 .circle {
     z-index: 2;
     width: 120px;
@@ -137,10 +138,6 @@ export default {
     position: absolute;
     z-index: 3;
 }
-.carousel-button > a {
-    color: white;
-    text-decoration: none !important;
-}
 .carousel-button-left {
     bottom: 40px;
     left: 10px;
@@ -149,6 +146,11 @@ export default {
     bottom: 40px;
     right: 10px;
 }
+.carousel-button > a {
+    color: white;
+    text-decoration: none !important;
+}
+
 #red-circle{
     bottom: -60px;
     right: -60px;
@@ -219,5 +221,31 @@ export default {
     border:none;
     border-top:1.5px dashed gray;
 }  
-
+@media (max-width: 1024px) {
+    .pure-u-1-2 {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .carousel-button {
+        bottom: 40px;
+        left: 10px;
+    }
+    .post-info {
+        bottom: -10px;
+        left: 10px;
+    }
+    .circle {
+        display: none;
+    }
+}
+@media (min-width: 1024px) {
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .8s
+    }
+    .fade-enter, .fade-leave-active {
+        opacity: 0
+    }
+    
+}
 </style>

@@ -45,6 +45,7 @@
             </div>
         </div>
     </div>
+    <foot></foot>
 </div>
 </template>
 
@@ -52,13 +53,15 @@
 import navigation from './common/navigation'
 import news from './common/news'
 import trailer from './common/trailer'
+import foot from './common/foot'
 import tvApi from '../api/tv'
 import movieApi from '../api/movie'
 export default {
   components: {
     'navigation': navigation,
     'news': news,
-    'trailer': trailer
+    'trailer': trailer,
+    'foot': foot
   },
   data () {
     return {
@@ -222,6 +225,9 @@ export default {
     border-top:1.5px dashed gray;
 }  
 @media (max-width: 1024px) {
+    .pure-g {
+        height: auto !important;
+    }
     .pure-u-1-2 {
         display: block;
         width: 100%;

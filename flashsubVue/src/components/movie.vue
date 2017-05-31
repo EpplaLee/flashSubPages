@@ -10,15 +10,21 @@
                     </router-link>    
                 </div>
             </div>
-        </template>    
+        </template>
+        <pagination></pagination>
+        <foot></foot>    
     </div>
 </template>
 <script>
 import navigation from './common/navigation'
+import foot from './common/foot'
+import pagination from './common/pagination'
 import movieApi from '../api/movie.js'
 export default {
   components: {
-    'navigation': navigation
+    'navigation': navigation,
+    'foot': foot,
+    'pagination': pagination
   },
   data () {
     return {
@@ -41,14 +47,21 @@ export default {
 #movie-area {
     text-align: center;
     width: 90%;
+    height: 120vh;
     margin: 10px auto 0;
 }
 .movie-item {
     margin: 15px;
     height: 400px;
     width: 280px;
+    transition: all .3s;
+}
+.movie-item:hover {
+    box-shadow: 0 0 1em;
+    transform: scale(1.05);
 }
 a > img {
+    z-index: 0;
     height: 380px;
     width: 280px;
 }

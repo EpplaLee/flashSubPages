@@ -12,15 +12,18 @@
                 </div>
                 
             </div>
-        </template>    
+        </template>
+        <foot></foot> 
     </div>
 </template>
 <script>
 import navigation from './common/navigation'
 import tvApi from '../api/tv.js'
+import foot from './common/foot'
 export default {
   components: {
-    'navigation': navigation
+    'navigation': navigation,
+    'foot': foot
   },
   data () {
     return {
@@ -42,12 +45,18 @@ export default {
 #tv-area {
     text-align: center;
     width: 90%;
+    height: 120vh;
     margin: 10px auto 0;
 }
 .tv-item {
     margin: 15px;
     height: 400px;
     width: 280px;
+    transition: all .3s;
+}
+.tv-item:hover {
+    box-shadow: 0 0 1em;
+    transform: scale(1.05);
 }
 a > img {
     height: 380px;

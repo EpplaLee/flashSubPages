@@ -15,15 +15,18 @@
                 </div>
             </div>  
         </div>
-    </div>  
+    </div>
+    <foot></foot>  
     </div>
 </template>
 <script>
 import navigation from './common/navigation'
 import newsApi from '../api/news.js'
+import foot from './common/foot'
 export default {
   components: {
-    'navigation': navigation
+    'navigation': navigation,
+    'foot': foot
   },
   data () {
     return {
@@ -44,6 +47,7 @@ export default {
 <style>
 #news-area {
     width: 90%;
+    height: 120vh; 
     margin: 20px auto 0;
 }
 .news-item {

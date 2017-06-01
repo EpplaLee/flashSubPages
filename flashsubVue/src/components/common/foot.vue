@@ -10,7 +10,12 @@
         <a href="http://www.acfun.cn/u/3560713.aspx"><img src="../../assets/acfun.svg" alt="acfun"></a>
         <a href="http://space.bilibili.com/24129180/" id="bilibili"><img src="../../assets/bilibili.svg" alt="bilibili"></a>
         <a href="http://weibo.com/flashsub"><img src="../../assets/weibo.svg" alt="weibo"></a>
-        <a href="#"><img src="../../assets/wechat.svg" alt="wechat"></a>  
+        <div id="wechat">
+        <div id="QR">
+            <img src="../../assets/qrcode.png" alt="">
+        </div>
+        <a href="#"><img src="../../assets/wechat.svg" alt="wechat"></a>     
+        </div>
         </div>
     </footer>
 </template>
@@ -38,5 +43,29 @@ footer {
 }
 #copyright {
     color: #8a8a8a;
+}
+#QR {
+    position: absolute;
+    right: -30px;
+    bottom: 50px;
+    width: 100px;
+    height: 100px;
+    float: right;
+    display: none;
+    box-shadow: 0 0 2em black;
+}
+#QR > img {
+    width: 100px;
+    height: 100px;
+}
+#wechat {
+    position: relative;
+    display: inline;
+    margin-left: 2vw;
+}
+#wechat:hover #QR {
+    
+    display: inline;
+    
 }
 </style>

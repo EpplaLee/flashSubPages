@@ -1,7 +1,7 @@
 <template v-if="newsList.length !== 0 && isLoading == false">
     <ul>
         <li v-for="(news, index) in newsList" class="news-title">
-            <router-link v-bind:to="'news/'+news._id">{{ news.name }}</router-link>
+            <router-link v-bind:to="'news/'+news._id">{{ news.title }}</router-link>
             <hr class="hr0" />
         </li>
     </ul>
@@ -11,18 +11,13 @@ import newsApi from '../../api/news.js'
 export default {
   data () {
     return {
-      allPage: 0,
-      limit: 8,
-      isLoading: true,
+      limit: 9,
       newsList: []
     }
   },
   mounted () {
-    newsApi.getAllNews('', '', this.limit).then(res => {
-      console.log(res)
-      this.allPage = res.data.allPage
+    newsApi.getAllNews('', this.limit).then(res => {
       this.newsList = res.data.newsList
-      this.isLoading = false
     })
   }
 }

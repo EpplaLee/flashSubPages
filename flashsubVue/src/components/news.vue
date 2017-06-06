@@ -4,18 +4,20 @@
     <div id="news-area">
         <div class="news-item" v-for="(news,index) in newsList">
             <div id="gallery">
-            <img v-bind:src="news.pic" v-bind:alt="news.name">    
+            <img v-bind:src="news.pic" v-bind:alt="news.title">    
             </div>
             <div id="text-area">
-                <h3>{{ news.name }}</h3>
+                <router-link v-bind:to="'news/'+news._id"><h3>{{ news.title }}</h3></router-link> 
                 <hr class="hr0" />
                 <div id="info">
                 <p id="trans">翻译贡献者:{{ news.translator }}</p>
                 <p id="time">{{ news.transTime }}</p>
                 </div>
-            </div>  
+            </div> 
+            
         </div>
     </div>
+    <pagination :curPage='curPage' :allPage='allPage' @changePage='changePage'></pagination>
     <foot></foot>  
     </div>
 </template>
@@ -23,24 +25,37 @@
 import navigation from './common/navigation'
 import newsApi from '../api/news.js'
 import foot from './common/foot'
+import pagination from './common/pagination'
 export default {
   components: {
     'navigation': navigation,
-    'foot': foot
+    'foot': foot,
+    'pagination': pagination
   },
   data () {
     return {
       allPage: 0,
-      limit: 8,
+      curPage: 1,
+      limit: 6,
       isloading: true,
       newsList: []
     }
   },
   mounted () {
-    newsApi.getAllNews('', '', this.limit).then(res => {
+    newsApi.getAllNews('', this.limit).then(res => {
+      this.allPage = res.data.allPage
       this.newsList = res.data.newsList
       this.isloading = false
     })
+  },
+  methods: {
+    changePage (cur) {
+      newsApi.getAllNews(cur, this.limit).then(res => {
+        this.allPage = res.data.allPage
+        this.newsList = res.data.newsList
+        this.curPage = cur
+      })
+    }
   }
 }
 </script>

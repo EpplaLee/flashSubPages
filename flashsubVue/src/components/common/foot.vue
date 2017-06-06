@@ -64,8 +64,6 @@ footer {
     margin-left: 2vw;
 }
 #wechat:hover #QR {
-    
     display: inline;
-    
 }
 </style>

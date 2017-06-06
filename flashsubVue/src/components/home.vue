@@ -91,10 +91,12 @@ export default {
 </script>
 <style>
 .pure-g {
-    height: 95vh !important;
+    height: auto !important;
+
 }
 .pure-u-1-2 {
-    height: 47.5vh;
+    height: auto;
+        min-height: 48vh !important;
     position: relative;
     overflow: hidden;
 }
@@ -206,10 +208,13 @@ export default {
 }
 #news {
     border-right: 0px dashed;
+    height: 48vh;
 }
 #news-area {
-    height: 47.5vh;
     margin: 60px 40px 40px 40px;
+}
+#trailer {
+    height: 48vh;
 }
 .news-title{
     list-style: none;

@@ -4,6 +4,7 @@ import movie from '@/components/movie'
 import news from '@/components/news'
 import tvPage from '@/components/tvPage'
 import moviePage from '@/components/moviePage'
+import newsPage from '@/components/newsPage'
 import Vue from 'vue'
 import Router from 'vue-router'
 
@@ -42,6 +43,11 @@ export default new Router({
       path: '/movie/:id',
       component: moviePage,
       name: 'moviePage'
+    },
+    {
+      path: '/news/:id',
+      component: newsPage,
+      name: 'newsPage'
     }
   ]
 })

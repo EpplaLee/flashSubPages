@@ -1,7 +1,7 @@
 <template v-if="trailerList.length !== 0 && isLoading == false">
     <ul>
         <li v-for="(trailer, index) in trailerList" class="news-title">
-            <router-link v-bind:to="'news/'+trailer._id">{{ trailer.name }}</router-link>
+            <a v-bind:to="trailer.url">{{ trailer.title }}</a>
             <hr class="hr0" />
         </li>
     </ul>

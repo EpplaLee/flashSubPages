@@ -11,7 +11,7 @@
                 </div>
             </div>
         </template>
-        <pagination></pagination>
+        <pagination :curPage='curPage' :allPage='allPage' @changePage='changePage'></pagination>
         <foot></foot>    
     </div>
 </template>
@@ -29,17 +29,27 @@ export default {
   data () {
     return {
       allPage: 0,
-      limit: 16,
+      curPage: 1,
+      limit: 6,
       isloading: true,
       movieList: []
     }
   },
   mounted () {
-    movieApi.getAllMovie('', '', this.limit).then(res => {
+    movieApi.getAllMovie('', this.limit).then(res => {
       this.allPage = res.data.allPage
       this.movieList = res.data.movieList
       this.isLoading = false
     })
+  },
+  methods: {
+    changePage (cur) {
+      movieApi.getAllMovie(cur, this.limit).then(res => {
+        this.allPage = res.data.allPage
+        this.movieList = res.data.movieList
+        this.curPage = cur
+      })
+    }
   }
 }
 </script>
@@ -47,11 +57,13 @@ export default {
 #movie-area {
     text-align: center;
     width: 90%;
-    height: 120vh;
+    min-width: 706px;
+    height: auto;
+    min-height: 88vh;
     margin: 10px auto 0;
 }
 .movie-item {
-    margin: 15px;
+    margin: 20px 15px 30px 15px;
     height: 400px;
     width: 280px;
     transition: all .3s;

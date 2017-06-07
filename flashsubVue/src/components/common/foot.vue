@@ -2,7 +2,7 @@
     <footer>
         <div id="foot-left">
             <p>欢迎加入闪电字幕组</p>
-            <p>审核群:XXXXXXX</p>
+            <p>审核群:303824967</p>
             <p id="copyright">Copyright©2017 MagicConch</p>
         </div>
         

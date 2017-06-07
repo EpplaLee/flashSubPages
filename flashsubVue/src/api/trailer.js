@@ -7,7 +7,7 @@ var instance = Axios.create({
 
 export default {
   getAllTrailer () {
-    return instance.get(`/api/trailer?page=1&limit=9`)
+    return instance.get(`/api/trailer?limit=9`)
   },
   getTrailer (id) {
     return instance.get(`/api/trailer/` + id)

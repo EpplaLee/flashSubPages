@@ -7,7 +7,7 @@
     </ul>
 </template>
 <script>
-import newsApi from '../../api/news.js'
+import newsApi from '../../api/news'
 export default {
   data () {
     return {

@@ -7,9 +7,10 @@ const router = express.Router();
 
 router.get('/trailer', async function(req, res) {
   let limit = +req.query.limit
-  let trailerList = Trailer.find({}).sort({createTime: -1}).limit(limit).catch(err => {
+  let trailerList = await Trailer.find({}).sort({createTime: -1}).limit(limit).catch(err => {
     res.sendStatus(500)
   })
+  console.log(trailerList)
   res.header("Access-Control-Allow-Origin", "*")
   res.json({
     trailerList: trailerList

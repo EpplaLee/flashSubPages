@@ -49,9 +49,9 @@
                         <td>单集片长</td>
                         <td>{{ tv.singleEpisodeTime }}分钟</td>
                     </tr>
-                    <tr class="pure-table pure-table-bordered" v-for="(download ,index) in tv.downloads">
+                    <tr class="pure-table pure-table-bordered" v-for="(download, index) in tv.downloads">
                         <td>第{{ index + 1}}集</td>
-                        <td><button class="pure-button download-button"><a v-bind:href="download">度盘链接</a></button></td>
+                        <td><button class="pure-button download-button"><a v-bind:href="download.link">{{download.code}}</a></button></td>
                     </tr>
                 </tbody>
             </table>

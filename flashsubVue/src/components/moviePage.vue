@@ -40,7 +40,7 @@
                     </tr>
                     <tr class="pure-table">
                         <td>下载链接</td>
-                        <td><button class="pure-button download-button"><a v-bind:href="movie.downloadLink">度盘链接</a></button></td>
+                        <td><button class="pure-button download-button"><a v-bind:href="movie.downloadLink">{{ movie.code }}</a></button></td>
                     </tr>
                 </tbody>
             </table>

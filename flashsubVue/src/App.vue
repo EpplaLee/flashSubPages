@@ -11,5 +11,8 @@ export default {
 </script>
 
 <style>
-
+p > img {
+    display: block;
+    margin: auto;
+}
 </style>

@@ -3,7 +3,8 @@ const TV = require('../models/tv')
 const Movie = require('../models/movie')
 const Article = require('../models/article')
 const Trailer = require('../models/trailer')
-const router = express.Router();
+const marked = require('marked')
+const router = express.Router()
 
 router.get('/trailer', async function(req, res) {
   let limit = +req.query.limit
@@ -30,15 +31,16 @@ router.get('/news',async function(req, res) {
     res.sendStatus(500)
   })
   let allPage = Math.ceil(allNum / limit)
-    res.header("Access-Control-Allow-Origin", "*")
-    res.json({
-      allPage: allPage,
-      newsList: newsList
-    })
+  res.header("Access-Control-Allow-Origin", "*")
+  res.json({
+    allPage: allPage,
+    newsList: newsList
+  })
 })
 router.get('/news/:id', function(req, res) {
   let id = req.params.id
   Article.find({"_id": id}).exec(function(err, news) {
+    news[0].content = marked(news[0].content)
     res.header("Access-Control-Allow-Origin", "*")
     res.json({
       news: news[0]

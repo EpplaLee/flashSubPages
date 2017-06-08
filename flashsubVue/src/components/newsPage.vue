@@ -4,9 +4,8 @@
         <div id="body">
             <h2>{{ news.title }}</h2>
             <p class="subtitle">{{ news.transTime }} By.{{ news.translator}}</p>
-            <img v-bind:src="news.pic" v-bind:alt="news.title">
-            <div>
-                {{ news.content }}
+            <div v-html="news.content" v>
+                
             </div>
         </div>
     </div>
@@ -54,8 +53,10 @@ export default {
 }
 #body > img {
     width: 90%;
+}
+p > img {
     display: block;
-    margin:auto;
+    margin: auto;
 }
 .subtitle {
     text-align: center;

@@ -41,7 +41,7 @@
                 <trailer></trailer>
             </div>
             <div class="circle" id="green-circle">
-                <a href="#">预告</a>
+                <a href="#">短片</a>
             </div>
         </div>
     </div>

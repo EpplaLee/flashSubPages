@@ -79,6 +79,9 @@ export default {
     width: 80%;
     margin-left: 20px;
 }
+#text-area > a {
+    text-decoration: none;
+}
 .hr0{ 
     height:1px;
     border:none;

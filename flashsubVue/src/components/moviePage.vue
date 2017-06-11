@@ -11,7 +11,7 @@
                     </tr>
                     <tr class="pure-table-odd">
                         <td>发行公司</td>
-                        <td>{{ movie.station }}</td>
+                        <td>{{ movie.company }}</td>
                     </tr>
                     <tr>
                         <td>上映时间</td>
@@ -27,7 +27,7 @@
                     </tr>
                     <tr class="pure-table-odd">
                         <td>主演</td>
-                        <td>{{ movie.casts }}</td>
+                        <td>{{ movie.cast }}</td>
                     </tr>
                     <tr>
                         <td>类型</td>
@@ -40,7 +40,7 @@
                     </tr>
                     <tr class="pure-table">
                         <td>下载链接</td>
-                        <td><button class="pure-button download-button"><a v-bind:href="movie.downloadLink">{{ movie.code }}</a></button></td>
+                        <td><button class="pure-button download-button"><a v-bind:href="movie.downloadLink" target="_blank">{{ movie.code }}</a></button></td>
                     </tr>
                 </tbody>
             </table>

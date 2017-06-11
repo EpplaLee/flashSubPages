@@ -92,11 +92,9 @@ export default {
 <style>
 .pure-g {
     height: auto !important;
-
 }
 .pure-u-1-2 {
-    height: auto;
-        min-height: 48vh !important;
+    height: 48vh !important;
     position: relative;
     overflow: hidden;
 }
@@ -119,8 +117,10 @@ export default {
 }
 
 .pureimg {
-    height: 100% !important;
-    width: 100%
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
 }
 .post-info {
     background-color: rgba(0,0,0,0.8);

@@ -7,9 +7,9 @@
         </div>
         
         <div id="foot-right">
-        <a href="http://www.acfun.cn/u/3560713.aspx"><img src="../../assets/acfun.svg" alt="acfun"></a>
-        <a href="http://space.bilibili.com/24129180/" id="bilibili"><img src="../../assets/bilibili.svg" alt="bilibili"></a>
-        <a href="http://weibo.com/flashsub"><img src="../../assets/weibo.svg" alt="weibo"></a>
+        <a href="http://www.acfun.cn/u/3560713.aspx" target="_blank"><img src="../../assets/acfun.svg" alt="acfun"></a>
+        <a href="http://space.bilibili.com/24129180/" id="bilibili" target="_blank"><img src="../../assets/bilibili.svg" alt="bilibili"></a>
+        <a href="http://weibo.com/flashsub" target="_blank"><img src="../../assets/weibo.svg" alt="weibo"></a>
         <div id="wechat">
         <div id="QR">
             <img src="../../assets/qrcode.png" alt="">

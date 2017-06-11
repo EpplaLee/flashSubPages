@@ -31,15 +31,15 @@
                     </tr>
                     <tr>
                         <td>主演</td>
-                        <td>{{ tv.casts }}</td>
+                        <td>{{ tv.cast }}</td>
                     </tr>
                     <tr class="pure-table-odd">
                         <td>类型</td>
-                        <td>{{ tv.genres }}</td>
+                        <td>{{ tv.geres }}</td>
                     </tr>
                     <tr>
                         <td>季数</td>
-                        <td>{{ tv.seasonsNum }}季</td>
+                        <td>{{ tv.seasonNum }}季</td>
                     </tr>
                     <tr class="pure-table-odd">
                         <td>本季集数</td>
@@ -51,7 +51,7 @@
                     </tr>
                     <tr class="pure-table pure-table-bordered">
                         <td>下载链接</td>
-                        <td><button class="pure-button download-button"><a v-bind:href="tv.downloadLink">{{ tv.code }}</a></button></td>
+                        <td><button class="pure-button download-button"><a v-bind:href="tv.downloadLink" target="_blank">{{ tv.code }}</a></button></td>
                     </tr>
                 </tbody>
             </table>
